@@ -1,0 +1,26 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %title Turbo Scroll Example
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
+    = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application'
+
+  %body{
+    data: {
+      controller: 'pane--background',
+    }
+  }
+    %main{ inert: true, aria: { hidden: 'true' } }
+      = yield :undermain
+
+    %main.pane.start-offscreen{
+      data: {
+        controller: 'pane--animator',
+      }
+    }
+      .main
+        .back
+          %a{ href: a_page_path, data: { action: 'pane--animator#closePane' } } Back
+
+        = yield

@@ -1,0 +1,15 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %title Turbo Scroll Example
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
+    = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application'
+
+  %body{
+    data: {
+      controller: 'visibility pane--start-page',
+    }
+  }
+    %main
+      = yield
