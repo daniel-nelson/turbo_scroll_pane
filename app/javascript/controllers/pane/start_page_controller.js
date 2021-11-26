@@ -1,15 +1,12 @@
 import { Controller } from '@hotwired/stimulus'
-import { Turbo } from '@hotwired/turbo-rails'
 
 export default class extends Controller {
   connect() {
     if (window.previousPageWasAPaneStartPage) {
-      document.removeEventListener('turbo:before-render', disableTurboScroll)
       document.removeEventListener('turbo:render', pageRendered)
     }
 
     document.addEventListener('turbo:visit', fetchRequested)
-    document.addEventListener('turbo:before-render', disableTurboScroll)
     document.addEventListener('turbo:render', pageRendered)
   }
 
@@ -21,11 +18,6 @@ export default class extends Controller {
 function fetchRequested() {
   window.previousPageWasAPaneStartPage = true
   window.paneStartPageScrollY = window.scrollY
-}
-
-function disableTurboScroll() {
-  if (!window.previousPageWasAPaneStartPage)
-    Turbo.navigator.currentVisit.scrolled = true
 }
 
 function pageRendered() {
