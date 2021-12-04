@@ -1,8 +1,8 @@
 # README
 
-This is a minimal Rails application illustrating how we maintain scroll when navigating to a "pane" in Hotwired Turbo. Broken behavior is visible with HEAD checked out. To see correct behavior, check out 2e35eab. 
+This is a minimal Rails application illustrating how we maintain scroll when navigating to a "pane" in Hotwired Turbo. Broken behavior is visible with HEAD checked out. To see correct behavior, check out 6c22de2bfaf20942fe4a66addee961cdd1b892a9. 
 
-The scroll issue is only visible in a mobile viewport, but in this minimal project, when using Chrome's device toolbar, navigating results in a weird scaling issue. That issue isn't visible when dragging the viewport narrow manually.
+The scroll issue is only visible in a mobile viewport.
 
 Here is a screen capture of correct scrolling behavior: https://youtu.be/QqQispo9abI
 
